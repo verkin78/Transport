@@ -2,12 +2,7 @@ package Transport;
 
 import java.time.LocalDate;
 
-public class Car {
-    private String brand;
-    private String model;
-    private int year;
-    private String country;
-    private String color;
+public class Car extends Transport {
     private double engineVolume;
     private String transmission;
     private String carBodyType;
@@ -17,33 +12,10 @@ public class Car {
     private Key key;
     private Insurance insurance;
 
-    public Car(String brand, String model, int year, String country, String color, double engineVolume,
-               String transmission, String carBodyType, String regNumber, int numberOfPlaces) {
-        if (brand == null || brand == "") {
-            this.brand = "Default";
-        } else {
-            this.brand = brand;
-        }
-        if (model == null || model == "") {
-            this.model = "Default";
-        } else {
-            this.model = model;
-        }
-        if (year < 0) {
-            this.year = 2000;
-        } else {
-            this.year = year;
-        }
-        if (country == null || country == "") {
-            this.country = "Default";
-        } else {
-            this.country = country;
-        }
-        if (color == null || color == "") {
-            this.color = "белый";
-        } else {
-            this.color = color;
-        }
+    public Car(String brand, String model, int year, String country, String color, int maaxSpeed,
+               double engineVolume, String transmission, String carBodyType, String regNumber,
+               int numberOfPlaces) {
+        super(brand, model, year, country, color, maaxSpeed);
         if (engineVolume < 0.0) {
             this.engineVolume = 1.5;
         } else {
@@ -77,26 +49,6 @@ public class Car {
         }
     }
 
-    public String getModel() {
-        return model;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
     public double getEngineVolume() {
         return engineVolume;
     }
@@ -119,10 +71,6 @@ public class Car {
 
     public String getRegNumber() {
         return regNumber;
-    }
-
-    public String getBrand() {
-        return brand;
     }
 
     public void setRegNumber(String regNumber) {
@@ -204,56 +152,53 @@ public class Car {
             }
         }
 
-
-    public Insurance() {
-        this(null, 110.111, null);
-    }
-
-    public LocalDate getExpireDay() {
-        return expireDay;
-    }
-
-    public void setExpireDay(LocalDate expireDay) {
-        this.expireDay = expireDay;
-    }
-
-    public double getCost() {
-        return cost;
-    }
-
-
-    public String getNumber() {
-        return number;
-    }
-
-    public void checkInsExp() {
-        if (expireDay.isBefore(LocalDate.now()) || expireDay.equals(LocalDate.now())) {
-            System.out.println("Срочно продлите страховку");
-        } else {
-            System.out.println("Всё ок");
+        public Insurance() {
+            this(null, 110.111, null);
         }
-    }
 
-
-    public void checkNumInsur() {
-        if (number.length() != 9) {
-            System.out.println("Страховка некорректная номер");
-        } else {
-            System.out.println("Всё ок");
+        public LocalDate getExpireDay() {
+            return expireDay;
         }
+
+        public void setExpireDay(LocalDate expireDay) {
+            this.expireDay = expireDay;
+        }
+
+        public double getCost() {
+            return cost;
+        }
+
+
+        public String getNumber() {
+            return number;
+        }
+
+        public void checkInsExp() {
+            if (expireDay.isBefore(LocalDate.now()) || expireDay.equals(LocalDate.now())) {
+                System.out.println("Срочно продлите страховку");
+            } else {
+                System.out.println("Всё ок");
+            }
+        }
+
+
+        public void checkNumInsur() {
+            if (number.length() != 9) {
+                System.out.println("Страховка некорректная номер");
+            } else {
+                System.out.println("Всё ок");
+            }
+        }
+
     }
 
+    @Override
+    public String toString() {
+        return
+                "\n" + "Марка: " + getBrand() + " модель: " + getModel() + ". " + "\n"
+                        + "Год выпуска: " + getYear() + ". Сборка " + getCountry() + ". " + "\n"
+                        + getColor() + " цвет." + "Максимальная скорость: " + getMaxSpeed() + " км в час." + "\n"
+                        + "объем двигателя — " + engineVolume + " Л." + "Коробка передач - " + transmission + ". " + "\n"
+                        + carBodyType + ". " + " Номер: " + regNumber + ". Количество мест: " + numberOfPlaces;
+    }
 }
-        @Override
-        public String toString() {
-            return
-                    brand +
-                            " " + model +
-                            ".  Год выпуска " + year +
-                            ". Сборка " + country +
-                            ". " + color +
-                            " цвет. объем двигателя — " + engineVolume + " Л." +
-                            transmission + ", " + carBodyType + ". " + " Номер: " +
-                            regNumber + ". Количество мест: " + numberOfPlaces;
-        }
-    }
