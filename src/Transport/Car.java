@@ -208,4 +208,5 @@ public class Car extends Transport {
                         + "объем двигателя — " + engineVolume + " Л." + "Коробка передач - " + transmission + ". " + "\n"
                         + carBodyType + ". " + " Номер: " + regNumber + ". Количество мест: " + numberOfPlaces;
     }
+
 }

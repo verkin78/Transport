@@ -94,3 +94,4 @@ public class Train extends Transport {
                         + " руб. Всего вагонов: " + numberOfCarriages + ".";
     }
 }
+

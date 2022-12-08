@@ -18,3 +18,4 @@ public class Bus extends Transport {
                         + getColor() + " цвет." + "Максимальная скорость: " + getMaxSpeed() + " км в час.";
     }
 }
+
