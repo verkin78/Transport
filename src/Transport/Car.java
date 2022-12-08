@@ -195,7 +195,7 @@ public class Car extends Transport {
     @Override
     public String toString() {
         return
-                "\n" + "Марка: " + getBrand() + " модель: " + getModel() + ". " + "\n"
+                "Марка: " + getBrand() + " модель: " + getModel() + ". " + "\n"
                         + "Год выпуска: " + getYear() + ". Сборка " + getCountry() + ". " + "\n"
                         + getColor() + " цвет." + "Максимальная скорость: " + getMaxSpeed() + " км в час." + "\n"
                         + "объем двигателя — " + engineVolume + " Л." + "Коробка передач - " + transmission + ". " + "\n"

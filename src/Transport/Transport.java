@@ -3,12 +3,12 @@ package Transport;
 import java.time.LocalDate;
 
 public class Transport {
-    protected String brand;
-    protected String model;
-    protected final int year;
-    protected final String country;
-    protected String color;
-    protected int maxSpeed;
+    private String brand;
+    private String model;
+    private final int year;
+    private final String country;
+    private String color;
+    private int maxSpeed;
 
     public String getBrand() {
         return brand;
@@ -61,7 +61,6 @@ public class Transport {
         } else {
             this.model = model;
         }
-
         if (year < 1900 || year > LocalDate.now().getYear()) {
             this.year = 0;
         } else {
