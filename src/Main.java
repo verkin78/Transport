@@ -1,3 +1,4 @@
+import Transport.Bus;
 import Transport.Car;
 import Transport.Train;
 
@@ -35,9 +36,24 @@ public class Main {
         Train leningrad = new Train("Ленинград", "D-125", 2019, "", "", 270,
                 "Ленинградский вокзал", "Ленинград-Пассажирский", 0, 1700,
                 8);
+        Train train = new Train(null, null, 0, null, null, 0,
+                null, null, 0, 0, 0);
 
         System.out.println(lastochka);
         System.out.println(leningrad);
 
+        System.out.println("\n" + "Про автобусы" + "\n");
+        Bus volvo = new Bus("Volvo", "VL20", 2017, "Швеция", "Серебристо-серый",
+                300);
+        Bus liaz = new Bus("ЛиАЗ", "л17-3", 2009, "Россия", "Сине-голубой",
+                290);
+        Bus hyundai = new Bus("Hyundai", "h5.d21", 2020, "Япония", "Белый с полосами",
+                295);
+        Bus bus = new Bus(null, null, 0, null, null, 0);
+
+        System.out.println(volvo);
+        System.out.println(liaz);
+        System.out.println(hyundai);
+        System.out.println(bus);
     }
 }
