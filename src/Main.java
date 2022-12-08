@@ -28,6 +28,7 @@ public class Main {
         System.out.println(car4);
         System.out.println(car5);
         System.out.println(car6);
+        car6.refill();
 
         System.out.println("\n" + "Про поезда" + "\n");
         Train lastochka = new Train("Ласточка", "B-901", 2011, "", "", 301,
@@ -41,6 +42,7 @@ public class Main {
 
         System.out.println(lastochka);
         System.out.println(leningrad);
+        train.refill();
 
         System.out.println("\n" + "Про автобусы" + "\n");
         Bus volvo = new Bus("Volvo", "VL20", 2017, "Швеция", "Серебристо-серый",
@@ -55,5 +57,6 @@ public class Main {
         System.out.println(liaz);
         System.out.println(hyundai);
         System.out.println(bus);
+        bus.refill();
     }
 }

@@ -6,10 +6,15 @@ public class Bus extends Transport {
     }
 
     @Override
+    public void refill() {
+        System.out.println("Можно заправлять бензином или дизелем на заправке");
+}
+
+    @Override
     public String toString() {
         return
                 "Марка: " + getBrand() + " модель: " + getModel() + ". " + "\n"
                         + "Год выпуска: " + getYear() + ". Сборка " + getCountry() + ". " + "\n"
-                        + getColor() + " цвет." + "Максимальная скорость: " + getMaxSpeed() + " км в час." + "\n";
+                        + getColor() + " цвет." + "Максимальная скорость: " + getMaxSpeed() + " км в час.";
     }
 }

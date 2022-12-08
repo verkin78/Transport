@@ -79,6 +79,11 @@ public class Train extends Transport {
     }
 
     @Override
+    public void  refill() {
+        System.out.println("Нужно заправлять дизелем");
+    }
+
+    @Override
     public String toString() {
         return
                 "Марка: " + getBrand() + " модель: " + getModel() + ". " + "\n"
