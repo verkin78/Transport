@@ -1,6 +1,6 @@
 package Transport;
 
-public class Bus extends Transport {
+public class Bus extends Transport implements Competing {
     private double engineVolume;
 
     public Bus(String brand, String model, double engineVolume) {
@@ -31,7 +31,9 @@ public class Bus extends Transport {
 
     @Override
     public void refill() {
-        System.out.println("Можно заправлять бензином или дизелем на заправке");
+        System.out.println(getBrand() + " можно заправлять бензином или дизелем на заправке");
+        System.out.println("Перед гонкой бак заполнен на %100");
+
     }
 
     @Override
@@ -40,6 +42,22 @@ public class Bus extends Transport {
                 "Марка: " + getBrand() + " модель: " + getModel() + ". Оюх1м двигателя: " + engineVolume + " л";
         /*+ "\n" + "Год выпуска: " + getYear() + ". Сборка " + getCountry() + ". " + "\n"
                         + getColor() + " цвет." + "Максимальная скорость: " + getMaxSpeed() + " км в час."*/
+    }
+
+    @Override
+    public void doPitStop() {
+        System.out.println("Автобус " + getBrand() + getModel() + " заехал на пит-стоп");
+        System.out.println("Машина снова в порядке и возвращается на круг!");
+    }
+
+    @Override
+    public void getBestRoundTime() {
+        System.out.println(getBrand() + " на данный момент показывает лучший результат на круге!");
+    }
+
+    @Override
+    public void haveMaxSpeed() {
+        System.out.println(getBrand() + " показывает лучшую скорость среди автобусов сегодня.");
     }
 }
 

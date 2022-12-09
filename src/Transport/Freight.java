@@ -1,6 +1,6 @@
 package Transport;
 
-public class Freight extends Transport {
+public class Freight extends Transport implements  Competing{
     private double engineVolume;
     public Freight(String brand, String model, double engineVolume) {
         super(brand, model);
@@ -30,12 +30,29 @@ public class Freight extends Transport {
 
     @Override
     public void refill() {
-        System.out.println("Можно заправлять бензином или дизелем на заправке");
+        System.out.println(getBrand() + " можно заправлять бензином или дизелем на заправке");
+        System.out.println("Перед гонкой бак заполнен на %100");
     }
 
     @Override
     public String toString() {
         return
                 "Марка: " + getBrand() + " модель: " + getModel() + ". Оюх1м двигателя: " + engineVolume + " л";
+    }
+
+    @Override
+    public void doPitStop() {
+        System.out.println("Грузовик " + getBrand() + getModel() + " заехал на пит-стоп");
+        System.out.println("Машина снова в порядке и возвращается на круг!");
+    }
+
+    @Override
+    public void getBestRoundTime() {
+        System.out.println(getBrand() + " на данный момент показывает лучший результат на круге!");
+    }
+
+    @Override
+    public void haveMaxSpeed() {
+        System.out.println(getBrand() + " показывает лучшую скорость среди грузовиков сегодня.");
     }
 }

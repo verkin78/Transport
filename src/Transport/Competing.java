@@ -1,10 +1,10 @@
 package Transport;
 
 public interface Competing {
-    String[] doPitStop();
+    void doPitStop();
 
-    String[] getBestRoundTime();
+    void getBestRoundTime();
 
-    String[] haveMaxSpeed();
+    void haveMaxSpeed();
 
 }

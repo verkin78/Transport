@@ -1,6 +1,6 @@
 package Transport;
 
-public class Car extends Transport {
+public class Car extends Transport implements Competing{
     private double engineVolume;
     /*private String transmission;
     private String carBodyType;
@@ -197,8 +197,10 @@ public class Car extends Transport {
 
     @Override
     public void refill() {
-        System.out.println("Можно заправлять бензином, дизелем на заправке или заряжать на специальных" +
+        System.out.println(getBrand() + " можно заправлять бензином, дизелем на заправке или заряжать на специальных" +
                 " электроду-парковках, если это электрокар");
+        System.out.println("Перед гонкой бак заполнен на %100");
+
     }
 
     @Override
@@ -209,6 +211,22 @@ public class Car extends Transport {
         + getColor() + " цвет." + "Максимальная скорость: " + getMaxSpeed() + " км в час." + "\n"
         + "объем двигателя — " + engineVolume + " Л." + "Коробка передач - " + transmission + ". " + "\n"
         + carBodyType + ". " + " Номер: " + regNumber + ". Количество мест: " + numberOfPlaces*/
+    }
+
+    @Override
+    public void doPitStop() {
+        System.out.println("Машина " + getBrand() + getModel() + " заехала на пит-стоп");
+        System.out.println("Машина снова в порядке и возвращается на круг!");
+    }
+
+    @Override
+    public void getBestRoundTime() {
+        System.out.println(getBrand() + " на данный момент показывает лучший результат на круге!");
+    }
+
+    @Override
+    public void haveMaxSpeed() {
+        System.out.println(getBrand() + " показывает лучшую скорость среди легковушек сегодня.");
     }
 }
 

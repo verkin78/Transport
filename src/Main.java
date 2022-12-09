@@ -27,6 +27,10 @@ public class Main {
         /*System.out.println(hyundai);
         System.out.println(car);
         car.refill();*/
+        bmw.doPitStop();
+        audi.getBestRoundTime();
+        kia.refill();
+        lada.haveMaxSpeed();
 
 
 
@@ -60,6 +64,10 @@ public class Main {
         System.out.println(daiwoo);
         /*System.out.println(bus);
         bus.refill();*/
+        liaz.refill();
+        volvo.getBestRoundTime();
+        hyundai.doPitStop();
+        daiwoo.haveMaxSpeed();
 
         System.out.println("\n" + "В гонках участвуют следующие грузовые автомобли:" + "\n");
         Freight gaz = new Freight("ГАЗ", "г410", 2.5);
@@ -67,5 +75,14 @@ public class Main {
         Freight kraz = new Freight("КРАЗ", "Кр867", 2.7);
         Freight man = new Freight("Man", "m3n25", 2.9);
         Freight freight = new Freight("", "", 0);
+
+        System.out.println(gaz);
+        System.out.println(mercedes);
+        System.out.println(kraz);
+        System.out.println(man);
+        kraz.refill();
+        gaz.doPitStop();
+        mercedes.getBestRoundTime();
+        man.haveMaxSpeed();
     }
 }
