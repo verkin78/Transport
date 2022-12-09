@@ -1,27 +1,18 @@
 package Transport;
 
-import java.time.LocalDate;
-
 public class Car extends Transport {
     private double engineVolume;
-    private String transmission;
+    /*private String transmission;
     private String carBodyType;
     private String regNumber;
     private int numberOfPlaces;
     private boolean tiresType;
     private Key key;
-    private Insurance insurance;
+    private Insurance insurance;*/
 
-    public Car(String brand, String model, int year, String country, String color, int maaxSpeed,
-               double engineVolume, String transmission, String carBodyType, String regNumber,
-               int numberOfPlaces) {
-        super(brand, model, year, country, color, maaxSpeed);
-        if (engineVolume < 0.0) {
-            this.engineVolume = 1.5;
-        } else {
-            this.engineVolume = engineVolume;
-        }
-        if (transmission == null || transmission == "") {
+    public Car(String brand, String model, double engineVolume) {
+        super(brand, model);
+        /*if (transmission == null || transmission == "") {
             this.transmission = "Default";
         } else {
             this.transmission = transmission;
@@ -41,12 +32,11 @@ public class Car extends Transport {
         } else {
             this.numberOfPlaces = numberOfPlaces;
         }
-
         if (key == null) {
             this.key = new Key();
         } else {
             this.key = key;
-        }
+        }*/
     }
 
     public double getEngineVolume() {
@@ -54,10 +44,14 @@ public class Car extends Transport {
     }
 
     public void setEngineVolume(double engineVolume) {
-        this.engineVolume = engineVolume;
+        if (engineVolume < 0.0) {
+            this.engineVolume = 1.5;
+        } else {
+            this.engineVolume = engineVolume;
+        }
     }
 
-    public String getTransmission() {
+    /*public String getTransmission() {
         return transmission;
     }
 
@@ -189,9 +183,17 @@ public class Car extends Transport {
                 System.out.println("Всё ок");
             }
         }
+    }*/
 
+    @Override
+    public void moveStart() {
+        System.out.println("Начинаю движение!");
     }
 
+    @Override
+    public void moveStop() {
+        System.out.println("Останавливаюсь! Финиш.");
+    }
 
     @Override
     public void refill() {
@@ -202,11 +204,11 @@ public class Car extends Transport {
     @Override
     public String toString() {
         return
-                "Марка: " + getBrand() + " модель: " + getModel() + ". " + "\n"
-                        + "Год выпуска: " + getYear() + ". Сборка " + getCountry() + ". " + "\n"
-                        + getColor() + " цвет." + "Максимальная скорость: " + getMaxSpeed() + " км в час." + "\n"
-                        + "объем двигателя — " + engineVolume + " Л." + "Коробка передач - " + transmission + ". " + "\n"
-                        + carBodyType + ". " + " Номер: " + regNumber + ". Количество мест: " + numberOfPlaces;
+                "Марка: " + getBrand() + " модель: " + getModel() + ". Оюх1м двигателя: " + engineVolume + " л";
+        /*+ "\n" + "Год выпуска: " + getYear() + ". Сборка " + getCountry() + ". " + "\n"
+        + getColor() + " цвет." + "Максимальная скорость: " + getMaxSpeed() + " км в час." + "\n"
+        + "объем двигателя — " + engineVolume + " Л." + "Коробка передач - " + transmission + ". " + "\n"
+        + carBodyType + ". " + " Номер: " + regNumber + ". Количество мест: " + numberOfPlaces*/
     }
-
 }
+

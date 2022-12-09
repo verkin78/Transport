@@ -1,14 +1,17 @@
 package Transport;
 
-import java.time.LocalDate;
-
 public abstract class Transport {
     private String brand;
     private String model;
-    private final int year;
+    /*private final int year;
     private final String country;
     private String color;
-    private int maxSpeed;
+    private int maxSpeed;*/
+
+    public Transport(String brand, String model) {
+        this.brand = brand;
+        this.model = model;
+    }
 
     public String getBrand() {
         return brand;
@@ -18,7 +21,7 @@ public abstract class Transport {
         return model;
     }
 
-    public int getYear() {
+    /*public int getYear() {
         return year;
     }
 
@@ -32,36 +35,34 @@ public abstract class Transport {
 
     public int getMaxSpeed() {
         return maxSpeed;
-    }
+    }*/
 
     public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public void setMaxSpeed(int maxSpeed) {
-        this.maxSpeed = maxSpeed;
-    }
-
-    public Transport(String brand, String model, int year, String country, String color, int maxSpeed) {
         if (brand == null || brand.isEmpty()) {
             this.brand = "Default";
         } else {
             this.brand = brand;
         }
+    }
+
+    public void setModel(String model) {
         if (model == null || model.isEmpty()) {
             this.model = "Default";
         } else {
             this.model = model;
         }
-        if (year < 1900 || year > LocalDate.now().getYear()) {
+    }
+
+    /*public void setColor(String color) {
+        this.color = color;
+    }
+
+    public void setMaxSpeed(int maxSpeed) {
+        this.maxSpeed = maxSpeed;
+    }*/
+
+   // public Transport(String brand, String model, int year, String country, String color, int maxSpeed) {
+        /*if (year < 1900 || year > LocalDate.now().getYear()) {
             this.year = 0;
         } else {
             this.year = year;
@@ -80,16 +81,22 @@ public abstract class Transport {
             this.maxSpeed = 0;
         } else {
             this.maxSpeed = maxSpeed;
-        }
-    }
+        }*/
+
 
     public abstract void refill();
+
+    public abstract void moveStart();
+
+    public abstract void moveStop();
 
     @Override
     public String toString () {
         return
-                "Марка: " + brand + " " + model + ".  Год выпуска: " + year + "\n"
-                        + ". Сборка " + country + ". " + color + " цвет. " + "\n"
-                        + "Максимальная скорость: " + maxSpeed + "км в час.";
+                "Марка: " + brand + " " + model + ". ";
+        /*... Год выпуска: " + year + "\n"
+        + ". Сборка " + country + ". " + color + " цвет. " + "\n"
+        + "Максимальная скорость: " + maxSpeed + "км в час."*/
     }
 }
+

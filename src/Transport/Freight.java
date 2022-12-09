@@ -1,9 +1,8 @@
 package Transport;
 
-public class Bus extends Transport {
+public class Freight extends Transport {
     private double engineVolume;
-
-    public Bus(String brand, String model, double engineVolume) {
+    public Freight(String brand, String model, double engineVolume) {
         super(brand, model);
     }
 
@@ -38,8 +37,5 @@ public class Bus extends Transport {
     public String toString() {
         return
                 "Марка: " + getBrand() + " модель: " + getModel() + ". Оюх1м двигателя: " + engineVolume + " л";
-        /*+ "\n" + "Год выпуска: " + getYear() + ". Сборка " + getCountry() + ". " + "\n"
-                        + getColor() + " цвет." + "Максимальная скорость: " + getMaxSpeed() + " км в час."*/
     }
 }
-

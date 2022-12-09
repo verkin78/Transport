@@ -1,6 +1,6 @@
 package Transport;
 
-public class Train extends Transport {
+/* public class Train extends Transport {
     private double travelPrice;
     private double travelTime;
     private String firstStationName;
@@ -93,5 +93,5 @@ public class Train extends Transport {
                         + "Время в пути: " + travelTime + ". Стоимость поездки: " + travelPrice
                         + " руб. Всего вагонов: " + numberOfCarriages + ".";
     }
-}
+}*/
 
