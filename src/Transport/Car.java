@@ -39,6 +39,16 @@ public class Car extends Transport implements Competing{
         }*/
     }
 
+    @Override
+    public String getBrand() {
+        return super.getBrand();
+    }
+
+    @Override
+    public String getModel() {
+        return super.getModel();
+    }
+
     public double getEngineVolume() {
         return engineVolume;
     }

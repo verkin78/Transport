@@ -1,6 +1,4 @@
-import Transport.Bus;
-import Transport.Car;
-import Transport.Freight;
+import Transport.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -84,5 +82,14 @@ public class Main {
         gaz.doPitStop();
         mercedes.getBestRoundTime();
         man.haveMaxSpeed();
+
+        System.out.println("\n" + "В гонках участвуют следующие водители:" + "\n");
+        DriverB <Car> ivan = new DriverB<>("Иванов Иван Иванович", true, 12);
+        DriverC <Freight> vasily = new DriverC<>("Васильев Василий Васильевич", true, 15);
+        DriverD <Bus> pavel = new DriverD<>("Павлов Павел Павлович", true, 10);
+
+        ivan.moveStart(audi);
+        vasily.moveStart(man);
+        pavel.moveStart(daiwoo);
     }
 }

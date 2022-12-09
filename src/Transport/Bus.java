@@ -19,6 +19,15 @@ public class Bus extends Transport implements Competing {
         }
     }
 
+    public Bus(String brand, String model) {
+        super(brand, model);
+    }
+
+    @Override
+    public String getBrand() {
+        return super.getBrand();
+    }
+
     @Override
     public void moveStart() {
         System.out.println("Начинаю движение!");
