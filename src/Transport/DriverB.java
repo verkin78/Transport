@@ -40,8 +40,10 @@ public class DriverB<B extends Car> {
     }
 
     public void moveStart(B car) {
-        System.out.println("Водитель " + getFullName() + " на машине" + car.getBrand() + car.getModel() + "готов" +
-                " участвовать в гонках." + "\n" + "Начинает движение.");
+        System.out.println("Водитель " + getFullName() + " на машине" + car.getBrand() +
+                car.getModel() + "готов" +
+                " участвовать в гонках.");
+        car.printType();
         moveStop();
         refill();
     }

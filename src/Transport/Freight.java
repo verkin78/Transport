@@ -1,16 +1,44 @@
 package Transport;
 
 public class Freight extends Transport implements Competing {
-    private double engineVolume;
+
 
     public enum Weight {
-        N1,
-        N2,
-        N3;
+        N1(0.0D, 3.5D),
+        N2(3.5D, 12.0D),
+        N3(12.0D, null);
+        private Double from;
+        private Double to;
+
+        Weight(Double from, Double to) {
+            this.from = from;
+            this.to = to;
+        }
+
+        public Double getFrom() {
+            return from;
+        }
+
+        public void setFrom(Double from) {
+            this.from = from;
+        }
+
+        public Double getTo() {
+            return to;
+        }
+
+        public void setTo(Double to) {
+            this.to = to;
+        }
     }
 
-    public Freight(String brand, String model, double engineVolume) {
+    private double engineVolume;
+    private Weight weight;
+
+    public Freight(String brand, String model, double engineVolume, Weight weight) {
         super(brand, model);
+        setEngineVolume(engineVolume);
+        this.weight = weight;
     }
 
     public double getEngineVolume() {
@@ -23,6 +51,10 @@ public class Freight extends Transport implements Competing {
         } else {
             this.engineVolume = engineVolume;
         }
+    }
+
+    public Weight getWeight() {
+        return weight;
     }
 
     public Freight(String brand, String model) {
@@ -46,7 +78,13 @@ public class Freight extends Transport implements Competing {
 
     @Override
     public void printType() {
-
+        if (weight == null) {
+            System.out.println("Недостаточно данных");
+        } else {
+            String from = weight.getFrom() == null ? "" : " от" + weight.getFrom();
+            String to = weight.getTo() == null ? "" : " до" + weight.getTo();
+            System.out.println("Грузоподхёмность " + from + to);
+        }
     }
 
     @Override

@@ -2,22 +2,22 @@ package Transport;
 
 public class Car extends Transport implements Competing {
     public enum CarBackType {
-        SEDAN ("Седан"),
-        HATCHBACK ("Хэтчбэк"),
-        COUPE ("Купе"),
-        UNIVERSAL ("Универсал"),
-        SUV ("Внедорожник"),
-        CROSSOVER ("Кроссовер"),
-        PICKUP ("Пикап"),
-        VEN ("Фургон"),
-        MINI_VEM ("Минивен");
+        SEDAN("Седан"),
+        HATCHBACK("Хэтчбэк"),
+        COUPE("Купе"),
+        UNIVERSAL("Универсал"),
+        SUV("Внедорожник"),
+        CROSSOVER("Кроссовер"),
+        PICKUP("Пикап"),
+        VEN("Фургон"),
+        MINI_VEM("Минивен");
         private final String backType;
 
         CarBackType(String backType) {
             this.backType = backType;
         }
 
-        public System getBackType() {
+        public String getBackType() {
             return backType;
         }
     }
@@ -53,7 +53,9 @@ public class Car extends Transport implements Competing {
         }
     }
 
-
+    public CarBackType getCarBackType() {
+        return carBackType;
+    }
 
     @Override
     public void moveStart() {
@@ -67,6 +69,11 @@ public class Car extends Transport implements Competing {
 
     @Override
     public void printType() {
+        if (carBackType == null) {
+            System.out.println("Недостаточно данныхю");
+        } else {
+            System.out.println("Тип кузова" + carBackType.getBackType());
+        }
 
     }
 

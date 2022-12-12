@@ -41,7 +41,8 @@ public class DriverD<D extends Bus> {
 
         public void moveStart(D bus) {
             System.out.println("Водитель " + getFullName() + " на автобусе" + bus.getBrand() + bus.getModel() + "готов" +
-                    " участвовать в гонках." + "\n" + "Начинает движение.");
+                    " участвовать в гонках." );
+            bus.printType();
             moveStop();
             refill();
         }

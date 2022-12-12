@@ -41,7 +41,8 @@ package Transport;
 
         public void moveStart(C freight) {
             System.out.println("Водитель " + getFullName() + " на грузовике" + freight.getBrand() + freight.getModel() + "готов" +
-                    " участвовать в гонках." + "\n" + "Начинает движение.");
+                    " участвовать в гонках." + "Начинает движение.");
+            freight.printType();
             moveStop();
             refill();
         }
