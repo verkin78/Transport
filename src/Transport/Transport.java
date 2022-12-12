@@ -90,6 +90,8 @@ public abstract class Transport {
 
     public abstract void moveStop();
 
+    public abstract void printType();
+
     @Override
     public String toString () {
         return

@@ -1,7 +1,14 @@
 package Transport;
 
-public class Freight extends Transport implements  Competing{
+public class Freight extends Transport implements Competing {
     private double engineVolume;
+
+    public enum Weight {
+        N1,
+        N2,
+        N3;
+    }
+
     public Freight(String brand, String model, double engineVolume) {
         super(brand, model);
     }
@@ -35,6 +42,11 @@ public class Freight extends Transport implements  Competing{
     @Override
     public void moveStop() {
         System.out.println("Останавливаюсь! Финиш.");
+    }
+
+    @Override
+    public void printType() {
+
     }
 
     @Override

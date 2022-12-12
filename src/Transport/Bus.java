@@ -1,6 +1,16 @@
 package Transport;
 
 public class Bus extends Transport implements Competing {
+
+    public enum Capacity {
+        SUPER_SMALL,
+        SMALL,
+        MEDIUM,
+        BIG,
+        SUPER_BIG;
+    }
+
+
     private double engineVolume;
 
     public Bus(String brand, String model, double engineVolume) {
@@ -36,6 +46,11 @@ public class Bus extends Transport implements Competing {
     @Override
     public void moveStop() {
         System.out.println("Останавливаюсь! Финиш.");
+    }
+
+    @Override
+    public void printType() {
+
     }
 
     @Override
