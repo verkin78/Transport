@@ -30,6 +30,7 @@ public class Bus extends Transport implements Competing {
     private double engineVolume;
     private Capacity capacity;
 
+
     public Bus(String brand, String model, double engineVolume,Capacity capacity) {
         super(brand, model);
         setEngineVolume(engineVolume);
@@ -79,6 +80,12 @@ public class Bus extends Transport implements Competing {
             System.out.println("Вместимость автобуса: от" + capacity.getFrom()+ " до " +
                     capacity.getTo() + " человек");
         }
+
+    }
+
+    @Override
+    public void doService() {
+        System.out.println("Автобус" + getBrand() + getModel() + " не нуждается в обслуживании");
 
     }
 

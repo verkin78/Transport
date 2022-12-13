@@ -4,11 +4,21 @@ package Transport;
         private String fullName;
         private boolean driveLicense;
         private int experience;
+        private DriverLicense driverLicense;
 
-        public DriverC(String fullName, boolean driveLicense, int experience) {
+        public DriverC(String fullName, boolean driveLicense, int experience, DriverLicense driverLicense) {
             this.fullName = fullName;
             this.driveLicense = driveLicense;
             this.experience = experience;
+            setDriverLicense(driverLicense);
+        }
+
+        public void setDriverLicense(DriverLicense driverLicense) {
+            if (driverLicense != DriverLicense.DRIVER_C) {
+                throw new IllegalArgumentException("Некорректные данные");
+            }else {
+                this.driverLicense = driverLicense;
+            }
         }
 
         public String getFullName() {

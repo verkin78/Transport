@@ -114,4 +114,9 @@ public class Freight extends Transport implements Competing {
     public void haveMaxSpeed() {
         System.out.println(getBrand() + " показывает лучшую скорость среди грузовиков сегодня.");
     }
+
+    @Override
+    public void doService() {
+        System.out.println("Грузовик"+getBrand()+ "обслужен");
+    }
 }

@@ -92,6 +92,9 @@ public abstract class Transport {
 
     public abstract void printType();
 
+    public abstract void  doService();
+
+
     @Override
     public String toString () {
         return
@@ -99,6 +102,12 @@ public abstract class Transport {
         /*... Год выпуска: " + year + "\n"
         + ". Сборка " + country + ". " + color + " цвет. " + "\n"
         + "Максимальная скорость: " + maxSpeed + "км в час."*/
+    }
+
+    public static void startService(Transport... transports) {
+        for (Transport transport : transports) {
+            transport.doService();
+        }
     }
 }
 

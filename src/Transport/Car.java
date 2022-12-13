@@ -25,11 +25,18 @@ public class Car extends Transport implements Competing {
     private double engineVolume;
     private CarBackType carBackType;
 
-    public Car(String brand, String model, double engineVolume, CarBackType carBackType1) {
+
+    public Car(String brand, String model, double engineVolume, CarBackType carBackType) {
         super(brand, model);
         this.engineVolume = engineVolume;
-        this.carBackType = carBackType1;
+        this.carBackType = carBackType;
     }
+
+    public void setCarBackType(CarBackType carBackType) {
+        this.carBackType = carBackType;
+    }
+
+
 
     @Override
     public String getBrand() {
@@ -109,6 +116,11 @@ public class Car extends Transport implements Competing {
     @Override
     public void haveMaxSpeed() {
         System.out.println(getBrand() + " показывает лучшую скорость среди легковушек сегодня.");
+    }
+
+    @Override
+    public void doService() {
+        System.out.println("Автомобиль "+getBrand()+ " обслужен");
     }
 }
 

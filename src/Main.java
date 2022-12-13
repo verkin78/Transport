@@ -52,13 +52,18 @@ public class Main {
 ;
 
         System.out.println("\n" + "В гонках участвуют следующие водители:" + "\n");
-        DriverB <Car> ivan = new DriverB("Иванов Иван Иванович", true, 12);
-        DriverC <Freight> vasily = new DriverC("Васильев Василий Васильевич", true, 15);
-        DriverD <Bus> pavel = new DriverD("Павлов Павел Павлович", true, 10);
+        DriverB <Car> ivan = new DriverB("Иванов Иван Иванович",
+                true, 12,DriverLicense.DRIVER_B);
+        DriverC <Freight> vasily = new DriverC("Васильев Василий Васильевич", true, 15,
+                DriverLicense.DRIVER_C);
+        DriverD <Bus> pavel = new DriverD("Павлов Павел Павлович",
+                true, 10,DriverLicense.DRIVER_D);
 
         ivan.moveStart(audi);
         vasily.moveStart(mercedes);
         pavel.moveStart(daiwoo);
+
+        Transport.startService(kia,kraz,daiwoo);
 
     }
 }
