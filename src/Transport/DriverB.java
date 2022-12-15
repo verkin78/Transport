@@ -10,7 +10,7 @@ public class DriverB<B extends Car> {
         this.fullName = fullName;
         this.driveLicense = driveLicense;
         this.experience = experience;
-        setDriverLicense(driverLicense);
+        this.driverLicense = driverLicense;
     }
 
     public String getFullName() {

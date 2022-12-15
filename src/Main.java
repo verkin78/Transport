@@ -1,9 +1,11 @@
 import Transport.*;
 
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("\n" + "В гонках участвуют следующие легковые автомобли:" + "\n");
+        System.out.println("\n" + "В гонках участвуют:" + "\n");
         Car lada = new Car("Lada", "Granta", 1.7, Car.CarBackType.SEDAN);
         //2015, "Россия(и)", "Желтый(того)", 290,  "механическая", "легковая", "с035ов277", 3//
         Car audi = new Car("Audi ", "A8 50 L TDI quattro", 2.0, Car.CarBackType.SEDAN);
@@ -17,17 +19,10 @@ public class Main {
                 4);
         Car car = new Car(null, null, -1990, "", "",
                 150, 1.2, null, null, null, 0);*/
-
-        System.out.println(lada);
-        System.out.println(audi);
-        System.out.println(bmw);
-        System.out.println(kia);
-
-        bmw.doPitStop();
+        /*        bmw.doPitStop();
         audi.getBestRoundTime();
         kia.refill();
-        lada.haveMaxSpeed();
-
+        lada.haveMaxSpeed();*/
 
 
         Bus volvo = new Bus("Volvo", "VL20", 3.0, Bus.Capacity.BIG);
@@ -40,30 +35,41 @@ public class Main {
         //Bus bus = new Bus(null, null, 0, null, null, 0);//
 
 
-
-
-        System.out.println("\n" + "В гонках участвуют следующие грузовые автомобли:" + "\n");
         Freight gaz = new Freight("ГАЗ", "г410", 2.5, Freight.Weight.N2);
         Freight mercedes = new Freight("Mercedes", "M701s", 3.1, Freight.Weight.N3);
         Freight kraz = new Freight("КРАЗ", "Кр867", 2.7, Freight.Weight.N1);
         Freight man = new Freight("Man", "m3n25", 2.9, Freight.Weight.N2);
         Freight freight = new Freight("", "", 0, Freight.Weight.N1);
 
-;
+        ;
 
         System.out.println("\n" + "В гонках участвуют следующие водители:" + "\n");
-        DriverB <Car> ivan = new DriverB("Иванов Иван Иванович",
-                true, 12,DriverLicense.DRIVER_B);
-        DriverC <Freight> vasily = new DriverC("Васильев Василий Васильевич", true, 15,
+        DriverB<Car> ivan = new DriverB("Иванов Иван Иванович", true,
+                7, DriverLicense.DRIVER_B);
+        DriverB<Car> andrey = new DriverB("Андреев Андрей Андреевич", true,
+                9, DriverLicense.DRIVER_B);
+        DriverC<Freight> vasily = new DriverC("Васильев Василий Васильевич", true, 15,
                 DriverLicense.DRIVER_C);
-        DriverD <Bus> pavel = new DriverD("Павлов Павел Павлович",
-                true, 10,DriverLicense.DRIVER_D);
+        DriverC<Freight> sergey = new DriverC("Сергеев Сергей Сергеевич", true,
+                8, DriverLicense.DRIVER_C);
+        DriverD<Bus> pavel = new DriverD("Павлов Павел Павлович",
+                true, 10, DriverLicense.DRIVER_D);
+        DriverD<Bus> petr = new DriverD("Петров Пётр Петрович",true,
+                10, DriverLicense.DRIVER_D);
 
         ivan.moveStart(audi);
         vasily.moveStart(mercedes);
         pavel.moveStart(daiwoo);
+        andrey.moveStart(bmw);
+        sergey.moveStart(kraz);
+        petr.moveStart(volvo);
 
-        Transport.startService(kia,kraz,daiwoo);
+        Transport.startService(kia, kraz, daiwoo);
+
+        List<Transport> race = List.of(audi, kraz, daiwoo, volvo, mercedes, bmw);
+
 
     }
+
+
 }

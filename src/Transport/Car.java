@@ -122,5 +122,10 @@ public class Car extends Transport implements Competing {
     public void doService() {
         System.out.println("Автомобиль "+getBrand()+ " обслужен");
     }
+
+    @Override
+    public void toSponsorRace() {
+
+    }
 }
 

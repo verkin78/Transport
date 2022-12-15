@@ -8,10 +8,13 @@ public abstract class Transport {
     private String color;
     private int maxSpeed;*/
 
+
+
     public Transport(String brand, String model) {
         this.brand = brand;
         this.model = model;
     }
+
 
     public String getBrand() {
         return brand;
@@ -61,7 +64,7 @@ public abstract class Transport {
         this.maxSpeed = maxSpeed;
     }*/
 
-   // public Transport(String brand, String model, int year, String country, String color, int maxSpeed) {
+    // public Transport(String brand, String model, int year, String country, String color, int maxSpeed) {
         /*if (year < 1900 || year > LocalDate.now().getYear()) {
             this.year = 0;
         } else {
@@ -92,11 +95,13 @@ public abstract class Transport {
 
     public abstract void printType();
 
-    public abstract void  doService();
+    public abstract void doService();
+
+    public abstract void toSponsorRace();
 
 
     @Override
-    public String toString () {
+    public String toString() {
         return
                 "Марка: " + brand + " " + model + ". ";
         /*... Год выпуска: " + year + "\n"
@@ -109,5 +114,6 @@ public abstract class Transport {
             transport.doService();
         }
     }
-}
+
+    }
 
