@@ -46,6 +46,15 @@ public class DriverB<B extends Car> {
         this.experience = experience;
     }
 
+    @Override
+    public String toString() {
+        return "DriverB{" +
+                "fullName='" + fullName + '\'' +
+                ", experience=" + experience +
+                ", driverLicense=" + driverLicense +
+                '}';
+    }
+
     public void refill() {
         System.out.println("Машина заправляется.");
     }

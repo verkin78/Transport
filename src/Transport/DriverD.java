@@ -29,6 +29,15 @@ public class DriverD<D extends Bus> {
         this.fullName = fullName;
     }
 
+    @Override
+    public String toString() {
+        return "DriverD{" +
+                "fullName='" + fullName + '\'' +
+                ", experience=" + experience +
+                ", driverLicense=" + driverLicense +
+                '}';
+    }
+
     public boolean isDriveLicense() {
         return driveLicense;
     }

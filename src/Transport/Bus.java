@@ -1,13 +1,16 @@
 package Transport;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Bus extends Transport implements Competing {
 
     public enum Capacity {
-        SUPER_SMALL(1,10),
-        SMALL(10,25),
-        MEDIUM(20,40),
-        BIG(40,60),
-        SUPER_BIG(60,80);
+        SUPER_SMALL(1, 10),
+        SMALL(10, 25),
+        MEDIUM(20, 40),
+        BIG(40, 60),
+        SUPER_BIG(60, 80);
 
         private final int from;
         private final int to;
@@ -26,15 +29,21 @@ public class Bus extends Transport implements Competing {
         }
     }
 
-
     private double engineVolume;
     private Capacity capacity;
 
+    List<DriverD<?>> driverD = new ArrayList<>();
 
-    public Bus(String brand, String model, double engineVolume,Capacity capacity) {
+
+    public Bus(String brand, String model, double engineVolume, Capacity capacity) {
         super(brand, model);
         setEngineVolume(engineVolume);
         this.capacity = capacity;
+        this.driverD = driverD;
+    }
+
+    public List<?> getDriverD() {
+        return driverD;
     }
 
     public double getEngineVolume() {
@@ -57,6 +66,11 @@ public class Bus extends Transport implements Competing {
         return capacity;
     }
 
+
+    public void addDriver(DriverD<?> driver) {
+        driverD.add(driver);
+    }
+
     @Override
     public String getBrand() {
         return super.getBrand();
@@ -76,8 +90,8 @@ public class Bus extends Transport implements Competing {
     public void printType() {
         if (capacity == null) {
             System.out.println("Недостаточно данныъ");
-        }else {
-            System.out.println("Вместимость автобуса: от" + capacity.getFrom()+ " до " +
+        } else {
+            System.out.println("Вместимость автобуса: от" + capacity.getFrom() + " до " +
                     capacity.getTo() + " человек");
         }
 
@@ -86,6 +100,11 @@ public class Bus extends Transport implements Competing {
     @Override
     public void doService() {
         System.out.println("Автобус" + getBrand() + getModel() + " не нуждается в обслуживании");
+
+    }
+
+    @Override
+    public void toSponsorRace() {
 
     }
 

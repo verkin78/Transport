@@ -1,5 +1,8 @@
 package Transport;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Freight extends Transport implements Competing {
 
 
@@ -9,6 +12,8 @@ public class Freight extends Transport implements Competing {
         N3(12.0D, null);
         private Double from;
         private Double to;
+
+
 
         Weight(Double from, Double to) {
             this.from = from;
@@ -34,11 +39,13 @@ public class Freight extends Transport implements Competing {
 
     private double engineVolume;
     private Weight weight;
+    List<DriverC<?>> driverC = new ArrayList<>();
 
     public Freight(String brand, String model, double engineVolume, Weight weight) {
         super(brand, model);
         setEngineVolume(engineVolume);
         this.weight = weight;
+        this.driverC = driverC;
     }
 
     public double getEngineVolume() {
@@ -51,6 +58,10 @@ public class Freight extends Transport implements Competing {
         } else {
             this.engineVolume = engineVolume;
         }
+    }
+
+    public void addDriver(DriverC<?> driver) {
+        driverC.add(driver);
     }
 
     public Weight getWeight() {
@@ -87,6 +98,10 @@ public class Freight extends Transport implements Competing {
         }
     }
 
+    public List<?> getDriverC() {
+        return driverC;
+    }
+
     @Override
     public void refill() {
         System.out.println(getBrand() + " можно заправлять бензином или дизелем на заправке");
@@ -117,6 +132,11 @@ public class Freight extends Transport implements Competing {
 
     @Override
     public void doService() {
-        System.out.println("Грузовик"+getBrand()+ "обслужен");
+        System.out.println("Грузовик" + getBrand() + "обслужен");
+    }
+
+    @Override
+    public void toSponsorRace() {
+
     }
 }

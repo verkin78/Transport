@@ -1,5 +1,8 @@
 package Transport;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Car extends Transport implements Competing {
     public enum CarBackType {
         SEDAN("Седан"),
@@ -25,18 +28,22 @@ public class Car extends Transport implements Competing {
     private double engineVolume;
     private CarBackType carBackType;
 
+    List<DriverB<?>> driverB = new ArrayList<>();
 
     public Car(String brand, String model, double engineVolume, CarBackType carBackType) {
         super(brand, model);
         this.engineVolume = engineVolume;
         this.carBackType = carBackType;
+        this.driverB = driverB;
     }
 
     public void setCarBackType(CarBackType carBackType) {
         this.carBackType = carBackType;
     }
 
-
+    public List<?> getDriverB() {
+        return driverB;
+    }
 
     @Override
     public String getBrand() {
@@ -58,6 +65,10 @@ public class Car extends Transport implements Competing {
         } else {
             this.engineVolume = engineVolume;
         }
+    }
+
+    public void addDriver(DriverB<?> driver) {
+        driverB.add(driver);
     }
 
     public CarBackType getCarBackType() {

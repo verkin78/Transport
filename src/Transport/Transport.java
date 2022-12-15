@@ -1,20 +1,22 @@
 package Transport;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Transport {
     private String brand;
     private String model;
-    /*private final int year;
-    private final String country;
-    private String color;
-    private int maxSpeed;*/
 
+    List<Sponsor<?>> sponsors = new ArrayList<>();
 
+    List<Mechanic<?>> mechanics = new ArrayList<>();
 
     public Transport(String brand, String model) {
         this.brand = brand;
         this.model = model;
+        this.sponsors = sponsors;
+        this.mechanics = mechanics;
     }
-
 
     public String getBrand() {
         return brand;
@@ -24,21 +26,13 @@ public abstract class Transport {
         return model;
     }
 
-    /*public int getYear() {
-        return year;
+    public List<?> getSponsors() {
+        return sponsors;
     }
 
-    public String getCountry() {
-        return country;
+    public List<?> getMechanics() {
+        return mechanics;
     }
-
-    public String getColor() {
-        return color;
-    }
-
-    public int getMaxSpeed() {
-        return maxSpeed;
-    }*/
 
     public void setBrand(String brand) {
         if (brand == null || brand.isEmpty()) {
@@ -56,37 +50,6 @@ public abstract class Transport {
         }
     }
 
-    /*public void setColor(String color) {
-        this.color = color;
-    }
-
-    public void setMaxSpeed(int maxSpeed) {
-        this.maxSpeed = maxSpeed;
-    }*/
-
-    // public Transport(String brand, String model, int year, String country, String color, int maxSpeed) {
-        /*if (year < 1900 || year > LocalDate.now().getYear()) {
-            this.year = 0;
-        } else {
-            this.year = year;
-        }
-        if (country == null || country.isEmpty()) {
-            this.country = "Default";
-        } else {
-            this.country = country;
-        }
-        if (color == null || color.isEmpty()) {
-            this.color = "белый";
-        } else {
-            this.color = color;
-        }
-        if (maxSpeed <= 0) {
-            this.maxSpeed = 0;
-        } else {
-            this.maxSpeed = maxSpeed;
-        }*/
-
-
     public abstract void refill();
 
     public abstract void moveStart();
@@ -98,6 +61,14 @@ public abstract class Transport {
     public abstract void doService();
 
     public abstract void toSponsorRace();
+
+   public void addMechanic(Mechanic<?> mechanic) {
+        mechanics.add(mechanic);
+    }
+
+    public void addSponsor(Sponsor<?> sponsor) {
+        sponsors.add(sponsor);
+    }
 
 
     @Override
@@ -115,5 +86,5 @@ public abstract class Transport {
         }
     }
 
-    }
+}
 

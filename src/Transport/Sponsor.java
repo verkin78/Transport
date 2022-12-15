@@ -4,8 +4,8 @@ public class Sponsor <T extends Transport> {
     private String sponsorName;
     private int supportSum;
 
-    public Sponsor(String fullName, int supportSum) {
-        setSponsorName(sponsorName);
+    public Sponsor(String sponsorName, int supportSum) {
+        this.sponsorName = sponsorName;
         setSupportSum(supportSum);
     }
 
@@ -17,7 +17,7 @@ public class Sponsor <T extends Transport> {
         if (sponsorName == null || sponsorName.isEmpty()) {
             this.sponsorName = "Некорректные данные";
         } else {
-            this.sponsorName = fullName;
+            this.sponsorName = sponsorName;
         }
     }
 
@@ -33,7 +33,13 @@ public class Sponsor <T extends Transport> {
         }
     }
 
-
+    @Override
+    public String toString() {
+        return "Sponsor{" +
+                "sponsorName='" + sponsorName + '\'' +
+                ", supportSum=" + supportSum +
+                '}';
+    }
 
     public void toSponsorRace(T transport) {
         System.out.println("Автомобиль " + transport.getBrand() + transport.getModel() + " поддержан спонсором "

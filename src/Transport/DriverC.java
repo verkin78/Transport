@@ -29,6 +29,15 @@ package Transport;
             this.fullName = fullName;
         }
 
+        @Override
+        public String toString() {
+            return "DriverC{" +
+                    "fullName='" + fullName + '\'' +
+                    ", experience=" + experience +
+                    ", driverLicense=" + driverLicense +
+                    '}';
+        }
+
         public boolean isDriveLicense() {
             return driveLicense;
         }
