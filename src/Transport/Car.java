@@ -4,26 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Car extends Transport implements Competing {
-    public enum CarBackType {
-        SEDAN("Седан"),
-        HATCHBACK("Хэтчбэк"),
-        COUPE("Купе"),
-        UNIVERSAL("Универсал"),
-        SUV("Внедорожник"),
-        CROSSOVER("Кроссовер"),
-        PICKUP("Пикап"),
-        VEN("Фургон"),
-        MINI_VEM("Минивен");
-        private final String backType;
 
-        CarBackType(String backType) {
-            this.backType = backType;
-        }
-
-        public String getBackType() {
-            return backType;
-        }
-    }
 
     private double engineVolume;
     private CarBackType carBackType;

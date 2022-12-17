@@ -7,22 +7,13 @@ public class Main {
 
         System.out.println("\n" + "В гонках участвуют:" + "\n");
         Car lada = new Car("Lada", "Granta", 1.7, Car.CarBackType.SEDAN);
-        //2015, "Россия(и)", "Желтый(того)", 290,  "механическая", "легковая", "с035ов277", 3//
+
         Car audi = new Car("Audi ", "A8 50 L TDI quattro", 2.0, Car.CarBackType.SEDAN);
-        //2020, "Германии(я)", "черный", 300, 3.0, "автомат", "седан", "в077ин326", 5//
+
         Car bmw = new Car("BMW", "Z8", 2.1, Car.CarBackType.SEDAN);
-        //2021, "Германия", "черный", 295, "автомат", "седан", "о077иу327", 5//
+
         Car kia = new Car("Kia", "Sportage 4-го поколения", 1.4, Car.CarBackType.SEDAN);
-        //2018, "Южной Корее(Южная Корея)", "красный", 240, 2.4, "автомат", "легковая", "о445ва973", 4//
-        /*Car hyundai = new Car("Hyundai", "Avante", 2016, "Южная корея(Южной Корее)", "оранжевый",
-                260, 1.6, "автомат", "легковая", "у18мн746",
-                4);
-        Car car = new Car(null, null, -1990, "", "",
-                150, 1.2, null, null, null, 0);*/
-        /*        bmw.doPitStop();
-        audi.getBestRoundTime();
-        kia.refill();
-        lada.haveMaxSpeed();*/
+
 
 
         Bus volvo = new Bus("Volvo", "VL20", 3.0, Bus.Capacity.BIG);
