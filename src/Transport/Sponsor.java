@@ -1,11 +1,13 @@
 package Transport;
 
+import java.util.Objects;
+
 public class Sponsor <T extends Transport> {
     private String sponsorName;
     private int supportSum;
 
     public Sponsor(String sponsorName, int supportSum) {
-        this.sponsorName = sponsorName;
+        setSponsorName(sponsorName);
         setSupportSum(supportSum);
     }
 
@@ -31,6 +33,22 @@ public class Sponsor <T extends Transport> {
         } else {
             throw new IllegalArgumentException("Сумма поддержки указана некорректно");
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Sponsor<?> sponsor = (Sponsor<?>) o;
+        if (supportSum == sponsor.supportSum && sponsorName.equals(sponsor.sponsorName)) {
+            throw new UnsupportedOperationException("Нет одинаковым спонсорам");
+        }
+        return supportSum == sponsor.supportSum && sponsorName.equals(sponsor.sponsorName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(sponsorName, supportSum);
     }
 
     @Override

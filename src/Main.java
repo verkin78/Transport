@@ -1,6 +1,6 @@
 import Transport.*;
 
-import java.util.List;
+import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
@@ -66,14 +66,14 @@ public class Main {
 
         Transport.startService(kia, kraz, daiwoo);
 
-        List<Transport> race = List.of(audi, kraz, daiwoo, volvo, mercedes, bmw);
+        Set<Transport> race = Set.of(audi, kraz, daiwoo, volvo, mercedes, bmw);
 
         Sponsor<Car> ivan12 = new Sponsor<Car>("Иванов иван", 12345);
         audi.addSponsor(ivan12);
         printInfo(race);
     }
 
-    public static void printInfo(List<Transport> race) {
+    public static void printInfo(Set<Transport> race) {
         for (Transport transport : race) {
             System.out.println(transport.getBrand() + transport.getModel() + transport.getSponsors()
                     + transport.getMechanics());
